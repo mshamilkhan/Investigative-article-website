@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/navbar/Navbar';
+import DesktopMenu from './components/desktopMenu/DesktopMenu';
+import Home from './pages/Home';
+import {createBrowserRouter, BrowserRouter, RouterProvider, useLocation} from "react-router-dom"
+import AnimatedRoutes from './components/AnimatedRoutes/AnimatedRoutes';
+
+
 
 function App() {
+  // const location = useLocation();
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element:<Home/>
+      
+  //   },
+  //   {
+  //     path: "/menuopen",
+  //     element:<DesktopMenu/>
+      
+  //   }
+  // ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  //  <AnimatedRoutes/>
+    // <RouterProvider router={router} />   
+    <BrowserRouter> {/* Wrapping the entire app in a Router component */}
+    <AnimatedRoutes /> {/* This will now have access to useLocation */}
+  </BrowserRouter>
   );
 }
 
